@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostControler;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
 
@@ -21,6 +22,11 @@ Route::post('/signin', [AuthController::class, 'signin'])->name('signin');
 Route::post('/signup', [AuthController::class, 'signup'])->name('signup');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('dashboard', function () {
-    return view('dashboard');
-})->name('dashboard')->middleware('auth');
+Route::get('dashboard', [PostControler::class,"index"])->name('dashboard')->middleware('auth');
+Route::get('posts/create', [PostControler::class,'create']);
+Route::post('posts/store', [PostControler::class,'store']);
+Route::get('/posts/{id}', [PostControler::class, 'show']);
+Route::get('/posts/edit/{id}', [PostControler::class, 'edit']);
+Route::post('/posts/update/{id}', [PostControler::class, 'update']);
+Route::get('/posts/delete/{id}', [PostControler::class, 'destroy']);
+
