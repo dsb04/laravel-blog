@@ -22,7 +22,7 @@ Route::post('/signin', [AuthController::class, 'signin'])->name('signin');
 Route::post('/signup', [AuthController::class, 'signup'])->name('signup');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('dashboard', [PostControler::class,"index"])->name('dashboard')->middleware('auth');
+Route::get('/posts', [PostControler::class,"index"])->name('dashboard')->middleware('auth');
 Route::get('posts/create', [PostControler::class,'create']);
 Route::post('posts/store', [PostControler::class,'store']);
 Route::get('/posts/{id}', [PostControler::class, 'show']);
