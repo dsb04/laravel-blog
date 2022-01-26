@@ -55,10 +55,6 @@ class PostControler extends Controller
     {
         $user = auth()->user();
         $post = Post::find($id);
-
-        if ($user->id != $post->user_id){
-            abort(404);
-        }
         return view('posts.show',compact('post'));
        
     }
