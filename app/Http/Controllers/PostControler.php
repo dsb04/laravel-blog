@@ -54,9 +54,7 @@ class PostControler extends Controller
     public function show($id)
     {
         $post = Post::find($id);
-        return view(
-        'posts.show',
-        compact('/dashboard'));
+        return view('posts.show', compact('post'));
        
     }
 
