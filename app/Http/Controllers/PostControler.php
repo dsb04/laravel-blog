@@ -88,7 +88,7 @@ class PostControler extends Controller
             'title' => $request->title,
             'content' =>$request->content
         ]);
-        return redirect("/dashboard");
+        return redirect("/posts");
        }
 
     /**
