@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use lluminate\Support\Facades\Route
 use App\Http\Controllers\PostControler;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
+
 
 /*
 |--------------------------------------------------------------------------
